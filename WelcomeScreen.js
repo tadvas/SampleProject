@@ -1,8 +1,8 @@
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 
 export default function WelcomeScreen() {
   return (
-    <View style={{flex: 1}}>
+    <ScrollView indicatorStyle={"white"} style={{flex: 1}}>
       <Text 
         style={{
           textAlign: 'center',
@@ -14,7 +14,7 @@ export default function WelcomeScreen() {
       </Text>
       <Text style={{
         marginTop: 100, 
-        fontSize: 22, 
+        fontSize: 36, 
         textAlign: 'center', 
         color: 'white',
         marginLeft: 25,
@@ -23,7 +23,7 @@ export default function WelcomeScreen() {
         Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails 
         in a lively but casual environment. We would love to hear more about your experience with us!
       </Text>
-    </View>
+    </ScrollView>
   );
 }
 

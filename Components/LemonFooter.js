@@ -1,10 +1,24 @@
 import * as React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 export default function LemonFooter(){
     return (
-        <View style={{ height: 20, marginBottom:20, backgroundColor: '#F4CE14'}}>
-            <Text style={{ textAlign: 'center'}}>All rights reserved. 2022</Text>
+        <View style={FooterStyles.Footer}>
+            <Text style={FooterStyles.Text}>
+                All rights reserved 2022{' '}
+            </Text>
         </View>
     )
 }
+
+const FooterStyles = StyleSheet.create({
+    Footer: {
+        height: 20,
+        marginBottom:20,
+        backgroundColor: '#EE9972'
+    },
+    Text: {
+        textAlign: 'center',
+        fontStyle: 'italic'
+    }
+})
