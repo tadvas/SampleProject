@@ -13,7 +13,7 @@ export default function LemonHeader() {
 
 const headerStyles = StyleSheet.create({
     header: {
-        height: 100,
+        height: 75,
         backgroundColor: '#EE9972'
     },
     text: {
