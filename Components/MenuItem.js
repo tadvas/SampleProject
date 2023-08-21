@@ -1,5 +1,6 @@
 
-import { View, Text, StyleSheet, SectionList } from 'react-native';
+import { View, Text, StyleSheet, SectionList, Pressable, ScrollView, FlatList } from 'react-native';
+import React, {useState} from 'react';
 
 const menuItemsToDisplay = [
     {
@@ -68,16 +69,36 @@ const Footer = () => (
     </Text>
   );
 const MenuItem = () => {
+  const [showMenu, setShowMenu] = useState(false)
     const renderItem = ({ item }) => <Item name={item.name} price={item.price}/>
     return (
-        <SectionList
-            sections={menuItemsToDisplay}    
-            renderItem={renderItem}
-            keyExtractor={(item, index) => item + index}
-            renderSectionHeader={renderSectionHeader}
-            ListFooterComponent={Footer}
-        >
-        </SectionList>
+      <View>      
+        {!showMenu && (
+          <Text
+            style={menuStyles.footerText}
+          >
+          Click the button to start exploring our Menu! Bon apetit!
+          </Text>
+        )}
+        <Pressable style={menuStyles.button}>
+          <Text
+            onPress={()=>{
+            setShowMenu(!showMenu)
+          }}>  
+            {showMenu ? 'Home' : 'View Menu'}
+          </Text>
+        </Pressable>
+        {showMenu && (
+          <SectionList
+              sections={menuItemsToDisplay}    
+              renderItem={renderItem}
+              keyExtractor={(item, index) => item + index}
+              renderSectionHeader={renderSectionHeader}
+              ListFooterComponent={Footer}
+          >
+          </SectionList>
+        )} 
+      </View>
     );
 }
 
@@ -112,5 +133,15 @@ const menuStyles = StyleSheet.create({
         flexWrap: 'wrap',
         textAlign: 'center',
     },
+    button: {
+      fontSize: 22,
+      padding:10,
+      marginVertical: 8,
+      margin: 40,
+      backgroundColor: '#EDEFEE',
+      borderColor: '#EDEFEE',
+      borderWidth: 2,
+      borderRadius: 12
+    }
 })
 export default MenuItem;
