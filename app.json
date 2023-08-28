@@ -1,11 +1,11 @@
 {
-  "expo": {
+  "expo": {  
     "name": "SampleProject",
     "slug": "SampleProject",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
